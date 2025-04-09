@@ -1,182 +1,148 @@
-Tuyệt vời! Dưới đây là bài **Bài 3** đã được **sửa lại theo yêu cầu của bạn**:
+# 📘 Bài 3: Khởi tạo dự án đầu tiên với | Lesson 3: Initialize Your First Git Project
 
 ---
 
-# 🧱 Bài 3: Tạo dự án Git đầu tiên & Git Ignore  
-## 🧱 Lesson 3: Create First Git Project & Git Ignore
+## 🎯 Mục tiêu bài học | Lesson Objectives
+
+- Tạo thư mục dự án và khởi tạo Git  
+  *(Create a project folder and initialize Git)*  
+- Cấu hình `.gitignore` để loại trừ các file không cần thiết  
+  *(Configure `.gitignore` to exclude unnecessary files)*  
+- Sử dụng `git add` để thêm file vào vùng staging  
+  *(Use `git add` to add files to the staging area)*  
+- Kiểm tra trạng thái dự án bằng `git status`  
+  *(Check project status using `git status`)*
 
 ---
 
-## 🎯 🇻🇳 Mục tiêu  
-- Tạo thư mục dự án để học Git  
-- Khởi tạo Git trong thư mục  
-- Cấu hình `.gitignore` trước khi thêm và commit  
-- Thêm file vào Git (git add)  
-- Giải thích `git add .`  
+## 📁 1. Tạo thư mục dự án | Create the project folder
 
-## 🎯 🇺🇸 Objectives  
-- Create a project folder to learn Git  
-- Initialize Git in the folder  
-- Configure `.gitignore` before adding or committing files  
-- Add files to Git using `git add`  
-- Explain `git add .`
+### 🖐️ Cách 1: Tạo bằng tay  
+### ✋ Method 1: Manual creation
+
+- Tạo một thư mục tên là `learn-git`  
+  *(Create a folder named `learn-git`)*
+- Mở thư mục này bằng VS Code hoặc trình soạn thảo bạn yêu thích  
+  *(Open the folder in VS Code or your preferred editor)*
 
 ---
 
-## 📁 1. Tạo thư mục dự án  
-## 📁 1. Create project folder  
-
-**Tên thư mục – Folder name:** `bai-3-gitignore-va-git-add`
-
-### ✅ 🇻🇳 Cách 1: Tạo bằng tay  
-1. Mở File Explorer hoặc Finder  
-2. Tạo thư mục mới tên `bai-3-gitignore-va-git-add`  
-3. Mở thư mục này bằng VS Code
-
-### ✅ 🇺🇸 Method 1: Create manually  
-1. Open File Explorer or Finder  
-2. Create a new folder named `bai-3-gitignore-va-git-add`  
-3. Open it in VS Code
-
----
-
-### 💻 🇻🇳 Cách 2: Tạo bằng Terminal
+### 💻 Cách 2: Tạo bằng terminal | Method 2: Using the terminal
 
 ```bash
-mkdir bai-3-gitignore-va-git-add
-cd bai-3-gitignore-va-git-add
-code .
-```
-
-### 💻 🇺🇸 Method 2: Using Terminal
-
-```bash
-mkdir bai-3-gitignore-va-git-add
-cd bai-3-gitignore-va-git-add
+mkdir learn-git
+cd learn-git
 code .
 ```
 
 ---
 
-## 🚀 2. Khởi tạo Git  
-## 🚀 2. Initialize Git
+## 🌱 2. Khởi tạo Git | Initialize Git
 
 ```bash
 git init
 ```
 
-- 🇻🇳 Tạo thư mục ẩn `.git` để theo dõi phiên bản  
-- 🇺🇸 Creates a hidden `.git` folder to track version history
+### 🇻🇳 Giải thích:  
+Lệnh này sẽ tạo ra một thư mục ẩn tên là `.git` trong dự án của bạn. Thư mục này chứa toàn bộ thông tin lịch sử và cấu hình Git cho dự án.  
+📦 `.git` là trung tâm hoạt động của Git trong thư mục hiện tại.
+
+### 🇺🇸 Explanation:  
+This command creates a hidden folder named `.git` in your project. This folder contains the entire Git history and configuration for the repository.  
+📦 `.git` is the heart of Git in the current directory.
 
 ---
 
-## 🚫 3. Tạo file `.gitignore` trước  
-## 🚫 3. Create `.gitignore` file first
+## 📂 3. Tạo file `.gitignore` | Create `.gitignore` file
 
-> 🎯 🇻🇳 `.gitignore` giúp bạn loại trừ những file không nên được đẩy lên Git như file cấu hình cá nhân, file tạm, thư mục thư viện,…  
-> 🎯 🇺🇸 `.gitignore` helps you exclude files that shouldn't be pushed to Git like personal configs, temp files, libraries, etc.
+File `.gitignore` dùng để **bỏ qua các file không nên** đưa vào hệ thống quản lý mã nguồn Git (như thư viện, file tạm, thông tin cá nhân, v.v).
 
----
+The `.gitignore` file is used to **exclude files you don’t want** tracked by Git (such as libraries, temp files, personal configs, etc.).
 
-### 📄 🇻🇳 Một số file thường được ignore  
-### 📄 🇺🇸 Common files to ignore
+### 📝 Ví dụ nội dung `.gitignore` | Example `.gitignore` content
 
-| Tệp / Thư mục        | 🇻🇳 Giải thích                  | 🇺🇸 Explanation                    |
-|----------------------|-------------------------------|-----------------------------------|
-| `node_modules/`      | Thư viện Node.js              | Node.js dependencies              |
-| `.env`               | Biến môi trường (mật khẩu,…)  | Environment variables (secrets)   |
-| `vendor/`            | Thư viện PHP/Laravel          | Laravel/PHP dependencies          |
-| `.DS_Store`          | File hệ thống của macOS       | macOS system file                 |
-| `dist/`              | Mã sau khi build              | Compiled production code          |
-| `*.log`              | File log (ghi lỗi)            | Log files                         |
-
----
-
-### ✍️ 🇻🇳 Tạo `.gitignore` bằng tay  
-- Chuột phải → New File → đặt tên `.gitignore`  
-- Thêm nội dung:
-
-```gitignore
+```bash
 node_modules/
 .env
 .DS_Store
-dist/
-*.log
+vendor/
+storage/
 ```
 
-### 💻 🇺🇸 Or use Terminal
+### 🗒️ Giải thích từng dòng | Explanation of each line
 
-```bash
-touch .gitignore
-```
+| Dòng | Mục đích (VN) | Purpose (EN) |
+|------|---------------|--------------|
+| `node_modules/` | Thư mục chứa thư viện NPM | NPM packages folder |
+| `.env` | File chứa biến môi trường | Environment variables |
+| `.DS_Store` | File hệ thống của macOS | macOS system file |
+| `vendor/` | Thư viện PHP (Laravel) | PHP dependencies (Laravel) |
+| `storage/` | Dữ liệu cache/tạm của Laravel | Cache/temp data for Laravel |
 
 ---
 
-## 📄 4. Tạo file thực hành  
-## 📄 4. Create practice file
-
-```bash
-echo "Xin chào Git!" > hello.txt
-```
-
-```bash
-echo "API_KEY=123456" > .env
-```
-
-> 📌 `.env` chứa thông tin bí mật → sẽ bị **ignore**  
-> 📌 `.env` contains secrets → will be **ignored**
-
----
-
-## 🧪 5. Kiểm tra trạng thái  
-## 🧪 5. Check Git status
+## 🔍 4. Kiểm tra trạng thái | Check Git status
 
 ```bash
 git status
 ```
 
-- 🇻🇳 Bạn sẽ thấy `hello.txt` là file chưa được theo dõi (untracked)  
-- 🇺🇸 You'll see `hello.txt` as an untracked file  
-- 🇻🇳 `.env` sẽ không xuất hiện vì đã bị `.gitignore`  
-- 🇺🇸 `.env` won’t show because it’s ignored
+### 🇻🇳 Giải thích:  
+Lệnh này cho bạn biết trạng thái hiện tại của thư mục làm việc: file nào đã thay đổi, file nào chưa theo dõi, và file nào đã được đưa vào vùng staging.
+
+### 🇺🇸 Explanation:  
+This command tells you the current status of your working directory: which files have been modified, which are untracked, and which are staged.
 
 ---
 
-## ➕ 6. Thêm file với `git add`  
-## ➕ 6. Add files with `git add`
+## 🧪 5. Thêm file vào vùng staging | Add files to staging area
 
-### 📌 6.1 🇻🇳 Thêm một tệp  
+**Vùng staging (Staging area)** là nơi bạn chuẩn bị các file trước khi lưu chúng vào Git (commit).
+
+**The staging area** is like a prep zone where you collect changes before you officially commit them to Git history.
+
+---
+
+### ✅ 5.1 Thêm 1 file cụ thể | Add a specific file
+
 ```bash
-git add hello.txt
+git add index.html
 ```
 
-- 🇻🇳 Chỉ thêm file `hello.txt` vào vùng staging  
-- 🇺🇸 Only adds `hello.txt` to the staging area
+- 🇻🇳 Lệnh này thêm `index.html` vào vùng staging  
+- 🇺🇸 This adds `index.html` to the staging area
 
 ---
 
-### 📌 6.2 🇻🇳 Thêm tất cả thay đổi  
+### ✅ 5.2 Thêm toàn bộ file | Add all changes
+
 ```bash
 git add .
 ```
 
-- 🇻🇳 Thêm tất cả file mới/chỉnh sửa vào staging (trừ file bị ignore)  
-- 🇺🇸 Add all new/modified files to staging (excluding ignored files)
+- 🇻🇳 Thêm tất cả file mới và đã thay đổi vào vùng staging  
+- 🇺🇸 Adds all new and modified files to staging
 
-> 🧠 **Staging area** (vùng tạm): khu vực tạm chứa thay đổi trước khi commit  
-> 🧠 **Staging area**: a temporary zone before committing changes
+📌 Lưu ý: Các file trong `.gitignore` sẽ không được thêm.  
+📌 Note: Files listed in `.gitignore` will be skipped.
+
+---
+
+## 🧠 Tổng kết | Recap
+
+| Hành động | Lệnh | Ý nghĩa |
+|----------|------|--------|
+| Khởi tạo Git | `git init` | Tạo repo Git trong thư mục hiện tại *(create a Git repo in current folder)* |
+| Kiểm tra trạng thái | `git status` | Kiểm tra file đã thay đổi, đã stage, chưa stage *(see changes and staging info)* |
+| Thêm file cụ thể | `git add <file>` | Đưa 1 file vào vùng staging *(stage one file)* |
+| Thêm tất cả | `git add .` | Đưa tất cả file thay đổi vào staging *(stage all changes)* |
+| Tạo `.gitignore` | thủ công | Định nghĩa các file cần loại bỏ khỏi tracking *(exclude files from Git tracking)* |
 
 ---
 
-## ✅ Tóm tắt  
-## ✅ Summary
-
-| Lệnh Git           | 🇻🇳 Mục đích                          | 🇺🇸 Purpose                         |
-|--------------------|---------------------------------------|------------------------------------|
-| `git init`         | Khởi tạo Git repository              | Initialize Git repository          |
-| `touch .gitignore` | Tạo file ignore                      | Create ignore file                 |
-| `git add file`     | Thêm 1 file vào staging              | Add single file to staging         |
-| `git add .`        | Thêm tất cả file (trừ ignore)        | Add all files (except ignored)     |
-| `git status`       | Kiểm tra trạng thái tệp              | Check file status                  |
+## 🎉 Bạn đã hoàn thành Bài 3!  
+## 🎉 You’ve completed Lesson 3!
 
 ---
+
+📦 Trong bài tiếp theo, chúng ta sẽ học cách `git commit` để lưu lại thay đổi một cách chính thức và khám phá `git log` để xem lịch sử commit.
