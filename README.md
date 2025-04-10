@@ -1,7 +1,3 @@
-Tuyệt vời! Dưới đây là bài viết **giới thiệu dự án học Git song ngữ (Tiếng Việt – English)**, được trình bày như một bài blog – thân thiện, dễ đọc, và mang tính chia sẻ:
-
----
-
 # 🚀 Học Git Từ Cơ Bản Đến Nâng Cao – Song Ngữ Việt Anh
 
 ## 👋 Giới thiệu
